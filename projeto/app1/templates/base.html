@@ -1,0 +1,66 @@
+{% load static %}
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title> {% block title %} Sistema IF Sudeste - 2022 {% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+  {% block custom_css %}{% endblock %}
+</head>
+
+<body class="container">
+  <nav class="navbar navbar-expand-lg navbar-light rounded border border-dark" style="background-color: #FFFFFF;"
+    aria-label="top">
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+        </li>
+      </ul>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <div id="content" class="container my-3 mt-3">
+    {% block content %}
+    
+    {% endblock %}
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light rounded border border-dark text-center"
+    style="background-color: #FFFFFF;" aria-label="footer">
+    <div class="card-body">
+      <span class="">Sistema de controle de endereços</span>
+    </div>
+  </nav>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  {% block custom_js %}
+  <script>
+    if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.href);
+    }
+
+  </script>
+  {% endblock %}
+</body>
+
+</html>
